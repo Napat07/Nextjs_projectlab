@@ -1,0 +1,12 @@
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('http://www.projectlab.co.th/static/frontend/homepage/img/std_1.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .About-us{
+    font-size: 100px;
+    color: #ffffff;
+  }
