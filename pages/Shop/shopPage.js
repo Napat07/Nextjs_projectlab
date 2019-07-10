@@ -22,6 +22,10 @@ useEffect(() => {
   setrows(props.ProductListData)
 }, [])
 
+function HadleClickType(Data){
+  console.log(Data)
+  setrows(Data)
+}
 async function search (keyword) {
 console.log(keyword)
   const pushSearchData = {"keyword":keyword}    
@@ -41,8 +45,7 @@ console.log(keyword)
           <Form>
           <Banner/>
           <div  >
-          
-
+        
         <Navbar color="primary" light expand="md" >
           <Nav className="ml-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
@@ -57,7 +60,7 @@ console.log(keyword)
           <div className="container">
             <div className="row">
               <div className="col-sm-2">
-                    <NavVertical />
+                    <NavVertical ClickTypeOrBrand={HadleClickType}/>
               </div>
               <div className="col-lg-10" >
                 <Row>

@@ -128,5 +128,61 @@ router.get('/shopping-cart', function(req, res, next) {
    res.render('shop/shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice});
 });
 
+router.post("/pdType", async (req, res) => {
+  const type = req.body.protype;
+  if(type){
+  Product.find({ "productType": type }).then(data => {
+    console.log(type)
+    res.status(200).json(data);
+    console.log("Find Product Type"+type+" Success")
+  });
+}else{
+  Product.find().then(data => {
+    res.status(200).json(data);
+    console.log("Find Product Type"+type+" Fail")
+  });
+}
+});
+
+router.post("/pdBrand", async (req, res) => {
+  if(req.body.probrand){
+  Product.find({ "productBrand": req.body.probrand }).then(data => {
+    console.log(req.body.probrand)
+    res.status(200).json(data);
+    console.log("Find ProductBrand"+req.body.probrand+" Success")
+  });
+}else{
+  Product.find().then(data => {
+    res.status(200).json(data);
+    console.log("Find ProductBrand"+req.body.probrand+" Fail")
+  });
+}
+});
+
+router.post("/SEdit", async (req, res) => {
+  if(req.body.keyword){
+  Product.find({ "_id": req.body.keyword }).then(data => {
+    console.log("SEdit: "+req.body.keyword )
+    res.status(200).json(data);
+  });
+}else{
+  Product.find().then(data => {
+    res.status(200).json(data);
+  });
+}
+});
+
+//edit
+router.post("/edit",async (req, res) => {
+
+  const id = req.body._id;
+  console.log("Check: "+id)
+  Product.find({ "_id": id }).then(data => {
+   data.productName = req.body.productName
+   data.fullPrice = req.body.fullPrice
+   console.log(data)
+   data.save()
+  });
+});
 
 module.exports = router;
