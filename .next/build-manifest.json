@@ -3,20 +3,16 @@
     "static/development/dll/dll_599a58a60c43245180de.js"
   ],
   "pages": {
-    "/": [
+    "/AdminDashBoard/EditShop": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
-    "/Shop/shopPage": [
+    "/AdminDashBoard/showItemShop": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
-      "static/runtime/main.js"
-    ],
-    "/Shop/shopping-cart": [
-      "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/_app": [
@@ -25,12 +21,6 @@
     ],
     "/_error": [
       "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/index": [
-      "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
     "/next/dist/pages/_error": [
