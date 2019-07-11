@@ -22,14 +22,10 @@ function AddCourse() {
 
             const { inputs, handleInputChange } = useInput({ 
               courseName: 'no', 
-              courseDescription: 'no', 
-              courseInstructor: 'no', 
-              courseLevel: 'no', 
-              courseSubject: 'no',
               courseImage:'no',
-              coursePrice:'no',
-              discount:'no',
-              courseActive:'no' });
+              courseActive:'no', 
+              courseDetail:'no'
+            });
           
               async function handleSubmit () {
               console.log(inputs)
@@ -57,7 +53,7 @@ function adminDashBoardCourse () {
             <Col sm ="2">
             <div>
                     <h2>หมวดหมู่</h2>
-                    <h4 style={{marginLeft:"10px"}}>Course</h4>
+                    <h4 style={{marginLeft:"10px"}}>Shop</h4>
                     <Nav vertical pills>
                         <NavItem>
                             <NavLink href="/AdminDashBoard/adminDashBoardShop" >เพิ่มสินค้า</NavLink>
@@ -79,79 +75,28 @@ function adminDashBoardCourse () {
               <h1>Add Course</h1>
         <FormGroup row>
           
-          <Label for="courseName" sm={2}>Name</Label>
+          <Label for="courseName" sm={2}>Course Name</Label>
           <Col sm={10}>
-            <Input type="text" name="courseName" id="courseName" placeholder="Name"  onChange={handleInputChange}/>
+            <Input type="text" name="courseName" placeholder="Name"  onChange={handleInputChange}/>
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="courseLevel" sm={2}>Level</Label>
+          <Label for="courseImage" sm={2}>Course Image</Label>
           <Col sm={10}>
-            <Input type="select" name="courseLevel" id="courseLevel" onChange={handleInputChange} >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </Input>
-
+            <Input type="text" name="courseImage" placeholder="Image"  onChange={handleInputChange}/>
           </Col>
         </FormGroup>
-
+        
         <FormGroup row>
-          <Label for="courseSubject" sm={2}>Course Subject</Label>
+          <Label for="courseDetail" sm={2}>Text Editer</Label>
           <Col sm={10}>
-            <Input type="textarea" name="courseSubject" id="courseSubject" onChange={handleInputChange}/>
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Label for="exampleFile" sm={2}>รูป</Label>
-          <Col sm={10}>
-            <Input type="file" name="file" id="exampleFile" />
-            <FormText color="muted">
-              This is some placeholder block-level help text for the above input.
-              It's a bit lighter and easily wraps to a new line.
-            </FormText>
-          </Col>
-        </FormGroup>
-        <FormGroup tag="fieldset" row>
-          <legend className="col-form-label col-sm-2">Radio Buttons</legend>
-          <Col sm={10}>
-            <FormGroup check>
-              <Label check>
-                <Input type="radio" name="radio2" />{' '}
-                Option one is this and that—be sure to include why it's great
-              </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input type="radio" name="radio2" />{' '}
-                Option two can be something else and selecting it will deselect option one
-              </Label>
-            </FormGroup>
-            <FormGroup check disabled>
-              <Label check>
-                <Input type="radio" name="radio2" disabled />{' '}
-                Option three is disabled
-              </Label>
-            </FormGroup>
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Label for="checkbox2" sm={2}>Checkbox</Label>
-          <Col sm={{ size: 10 }}>
-            <FormGroup check>
-              <Label check>
-                <Input type="checkbox" id="checkbox2" />{' '}
-                Check me out
-              </Label>
-            </FormGroup>
+            <Input type="text" name="courseDetail" placeholder="Text Editer"  onChange={handleInputChange}/>
           </Col>
         </FormGroup>
       </Form>
       <FormGroup check row>
         <Col >
-            <Button type="submit" color="pimary" onClick={() => handleSubmit()} >Submit</Button>
+            <Button type="submit" color="primary" onClick={() => handleSubmit()} >Submit</Button>
           </Col>
       
         </FormGroup>
