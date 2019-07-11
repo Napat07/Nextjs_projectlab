@@ -33,6 +33,9 @@ const ProductSchema = new Schema({
   },
   weight: {
     type: String
+  },
+  tag: {
+    type: String
   }
 });
 

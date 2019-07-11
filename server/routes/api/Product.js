@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
 
 router.post("/search", async (req, res) => {
   if(req.body.keyword){
-  Product.find({ "productName": { "$regex": req.body.keyword, "$options": "i" } }).then(data => {
+  Product.find({ "tag": { "$regex": req.body.keyword, "$options": "i" } }).then(data => {
     console.log(req.body.keyword )
     res.status(200).json(data);
   });
@@ -58,7 +58,8 @@ router.post("/", async (req, res) => {
     tax: req.body.tax,
     notax: req.body.notax,
     availability: req.body.availability,
-    weight: req.body.weight
+    weight: req.body.weight,
+    tag: req.body.tag+req.body.productName+req.body.productBrand+req.body.productType
 
   });
     newProduct.save().then(data => {
@@ -177,12 +178,16 @@ router.post("/edit",async (req, res) => {
 
   const id = req.body._id;
   console.log("Check: "+id)
-  Product.find({ "_id": id }).then(data => {
-   data.productName = req.body.productName
-   data.fullPrice = req.body.fullPrice
-   console.log(data)
-   data.save()
+  console.log("name: "+req.body.productName)
+  console.log("Price: "+req.body.fullPrice)
+
+  Product.findByIdAndUpdate(id, {$set:req.body}, function(err, result){
+    if(err){
+      console.log(err);
+    }
+    console.log("RESULT: " + result);
   });
+  res.send('Done')
 });
 
 module.exports = router;

@@ -22,16 +22,18 @@ import {  Col,
 function AddProduct() {
 
   const { inputs, handleInputChange } = useInput({ 
-    productUPC: 'no', 
-    productName: 'no', 
-    productBrand: 'no', 
-    productType: 'no', 
-    productImage: 'no',
-    productPrice:'no',
-    notax:'no',
-    tax:'no',
-    availability:'no',
-    weight:'no' });
+    productUPC: '', 
+    productName: '', 
+    productBrand: '', 
+    productType: '', 
+    productImage: '',
+    productPrice:'',
+    notax:'',
+    tax:'',
+    availability:'',
+    weight:'',
+    tag:''
+   });
 
     async function handleSubmit () {
     console.log(inputs)
@@ -45,10 +47,6 @@ function AddProduct() {
     })
     alert("เพิ่มข้อมูลเรียบร้อยแล้ว");
   }
-
-  
-   
-  
 
   function adminDashBoardShop() {
       return (
@@ -168,7 +166,14 @@ function AddProduct() {
               <FormGroup row>
                 <Label for="weight" sm={2}>Weight (g) :</Label>
                   <Col sm={10}>
-                    <Input type="Tax" name="Weight" id="Weight" onChange={handleInputChange}  />
+                    <Input type="text" name="weight" onChange={handleInputChange}  />
+                  </Col>
+              </FormGroup>
+
+              <FormGroup row>
+                <Label for="tag" sm={2}>Tag :</Label>
+                  <Col sm={10}>
+                    <Input type="text" name="tag" onChange={handleInputChange}  />
                   </Col>
               </FormGroup>
 
@@ -185,17 +190,14 @@ function AddProduct() {
 
       </Form>
       <Button type="submit"  color="primary" onClick={() => handleSubmit()}>Submit</Button>
-
       
             </Col>
             
-            </Row>
-            
+            </Row>       
             
         </Container>
 
-        
-
+      
         <br/>
         </Formm>
         </div>
@@ -206,9 +208,6 @@ function AddProduct() {
         {adminDashBoardShop()}
         </div>
     )
-  
   }
-
-
 
 export default AddProduct;
