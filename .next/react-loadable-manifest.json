@@ -6,5 +6,13 @@
       "file": "static/chunks/0.js",
       "publicPath": "static/chunks/0.js"
     }
+  ],
+  "react-quill": [
+    {
+      "id": "./node_modules/base64-js/index.js",
+      "name": "./node_modules/base64-js/index.js",
+      "file": "static/chunks/1.js",
+      "publicPath": "static/chunks/1.js"
+    }
   ]
 }
