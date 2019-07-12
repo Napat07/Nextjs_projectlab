@@ -50,17 +50,31 @@ export default function ShowItemShop (props) {
               <div className="col-sm-2">
               <div>
                     <h2>หมวดหมู่</h2>
-                    <h4 style={{marginLeft:"10px"}}>Shop</h4>
+                    <h4 style={{marginLeft:"10px",marginTop:"20px"}}>Shop</h4>
                     <Nav vertical pills>
                         <NavItem>
                             <NavLink href="/AdminDashBoard/adminDashBoardShop"  >เพิ่มสินค้า</NavLink>
-                            <NavLink href="/AdminDashBoard/showItemShop" active> แก้ไข/แสดงสินค้า </NavLink>
+                            <NavLink href="/AdminDashBoard/showItemShop"active> แก้ไข/แสดงสินค้า </NavLink>
+                            <NavLink href="/AdminDashBoard/order/orderShop"> Order </NavLink>
                         </NavItem>
                         <NavItem>
                         <hr />
                         <h4 style={{marginLeft:"10px"}}>Course</h4>
-                            <NavLink href="/AdminDashBoard/adminDashBoardCourse">เพิ่ม Course</NavLink>
-                            <NavLink href="/AdminDashBoard/showItemCourse">แก้ไข/แสดง Course</NavLink>
+                            <NavLink href="/AdminDashBoard/adminDashBoardCourse" >เพิ่ม Course</NavLink>
+                            <NavLink href="/AdminDashBoard/showItemCourse" >แก้ไข/แสดง Course</NavLink>
+                            <NavLink href="/AdminDashBoard/order/orderCourse"> Order </NavLink>
+
+                        </NavItem>
+                        <NavItem>
+                        <hr />
+                        <h4 style={{marginLeft:"10px"}}>USER PROFILE</h4>
+                            <NavLink href="/AdminDashBoard/userProfile/userProfile">แก้ไข</NavLink>
+
+                        </NavItem>
+                        <NavItem>
+                        <hr />
+                        <h4 style={{marginLeft:"10px"}}>ADMIN CONSOLE</h4>
+                            <NavLink href="/AdminDashBoard/adminConsole/adminConsole">จัดการข้อมูล</NavLink>
 
                         </NavItem>
                     </Nav>

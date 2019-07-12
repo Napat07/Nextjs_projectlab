@@ -64,12 +64,26 @@ function AddProduct() {
                         <NavItem>
                             <NavLink href="/AdminDashBoard/adminDashBoardShop" active >เพิ่มสินค้า</NavLink>
                             <NavLink href="/AdminDashBoard/showItemShop"> แก้ไข/แสดงสินค้า </NavLink>
+                            <NavLink href="/AdminDashBoard/order/orderShop"> Order </NavLink>
                         </NavItem>
                         <NavItem>
                         <hr />
                         <h4 style={{marginLeft:"10px"}}>Course</h4>
                             <NavLink href="/AdminDashBoard/adminDashBoardCourse">เพิ่ม Course</NavLink>
                             <NavLink href="/AdminDashBoard/showItemCourse">แก้ไข/แสดง Course</NavLink>
+                            <NavLink href="/AdminDashBoard/order/orderCourse"> Order </NavLink>
+
+                        </NavItem>
+                        <NavItem>
+                        <hr />
+                        <h4 style={{marginLeft:"10px"}}>USER PROFILE</h4>
+                            <NavLink href="/AdminDashBoard/userProfile/userProfile">แก้ไข</NavLink>
+
+                        </NavItem>
+                        <NavItem>
+                        <hr />
+                        <h4 style={{marginLeft:"10px"}}>ADMIN CONSOLE</h4>
+                            <NavLink href="/AdminDashBoard/adminConsole/adminConsole">จัดการข้อมูล</NavLink>
 
                         </NavItem>
                     </Nav>

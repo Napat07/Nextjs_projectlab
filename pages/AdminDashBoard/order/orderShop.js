@@ -1,49 +1,31 @@
-import React, { useState,useEffect } from 'react';
-import Formm from '../../Component/form'
-import Head from '../../Component/head.js';
+import React,{useState}  from 'react';
+import Formm from '../../../Component/form'
+import Head from '../../../Component/head.js';
 import axios from 'axios';
-import Search from '../../Component/DashBoard/search';
-import Displayshopitem from '../../Component/ShopItem/displayshopitem' ;
-import {
-  NavLink,
-  Nav,
-  NavItem,
-  Row
-} from 'reactstrap'
-export default function ShowItemShop (props) {
-    const[rows,setrows] =useState([])
-    useEffect(() => {
-        setrows(props.ProductListData)
-      }, [])
-
-      
-    async function search (keyword) {
-    console.log(keyword)
-      const pushSearchData = {"keyword":keyword}    
-      await axios
-      .post(`http://localhost:3000/api/product/search`, pushSearchData)
-      .then(res => {
-      console.log(res.data)
-      setrows(res.data)
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }
-    return(
+import {  Col, 
+          Button, 
+          Form, 
+          FormGroup, 
+          Label, 
+          Input, 
+          FormText,
+          Nav, 
+          NavItem, 
+          NavLink,
+          Container,
+          Row  } 
+          from 'reactstrap';
+         
+export default function orderShop() {
+    return (
         <div>
+             <div>
             <Head title="Shop - Project Lab" />
             <Formm>
             <br/>
             <br/>
             <br/>
             <br/>
-
-            <input
-             onChange={(event) =>search(event.target.value)}
-            style={{paddingLeft:'8px',fontSize:24,display: 'block',width:'50%'}} 
-            placeholder="Enter your Item"
-            />
             
             <div className="container">
             <div className="row">
@@ -55,13 +37,13 @@ export default function ShowItemShop (props) {
                         <NavItem>
                             <NavLink href="/AdminDashBoard/adminDashBoardShop"  >เพิ่มสินค้า</NavLink>
                             <NavLink href="/AdminDashBoard/showItemShop"> แก้ไข/แสดงสินค้า </NavLink>
-                            <NavLink href="/AdminDashBoard/order/orderShop"> Order </NavLink>
+                            <NavLink href="/AdminDashBoard/order/orderShop" active> Order </NavLink>
                         </NavItem>
                         <NavItem>
                         <hr />
                         <h4 style={{marginLeft:"10px"}}>Course</h4>
                             <NavLink href="/AdminDashBoard/adminDashBoardCourse" >เพิ่ม Course</NavLink>
-                            <NavLink href="/AdminDashBoard/showItemCourse" active>แก้ไข/แสดง Course</NavLink>
+                            <NavLink href="/AdminDashBoard/showItemCourse" >แก้ไข/แสดง Course</NavLink>
                             <NavLink href="/AdminDashBoard/order/orderCourse"> Order </NavLink>
 
                         </NavItem>
@@ -74,7 +56,7 @@ export default function ShowItemShop (props) {
                         <NavItem>
                         <hr />
                         <h4 style={{marginLeft:"10px"}}>ADMIN CONSOLE</h4>
-                            <NavLink href="/AdminDashBoard/adminConsole/adminConsole">จัดการข้อมูล</NavLink>
+                            <NavLink href="/AdminDashBoard/adminConsole/adminConsole" >จัดการข้อมูล</NavLink>
 
                         </NavItem>
                     </Nav>
@@ -82,21 +64,13 @@ export default function ShowItemShop (props) {
               </div>
               <div className="col-lg-10" >
                 <div className="row" >
-                {
-                    rows.map(item =>(
-                        <Search movie={item}/>
-                    )) }
+               orderShop Page
                 </div>
               </div>
             </div>
           </div>    
                 </Formm>>
             </div>
-        );
+        </div>
+    )
 }
-ShowItemShop.getInitialProps = async function() {
-    const res = await axios.get(`http://localhost:3000/api/product`)
-    return {
-      ProductListData: res.data
-    }
-  }
