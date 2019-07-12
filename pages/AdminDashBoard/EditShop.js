@@ -3,7 +3,7 @@ import Formm from '../../Component/form'
 import Head from '../../Component/head.js';
 import useInput from '../../hook/custom-hook.js';
 import axios from 'axios';
-
+import Router from 'next/router';
 import {  Col, 
     Button, 
     Form, 
@@ -82,7 +82,11 @@ export default function EditShop (props){
       await axios
       .post("/api/product/edit", inputs2)
       .then(res => {
+      alert("Product Update Success!!!");
       console.log(res)
+      Router.push({
+        pathname: '/AdminDashBoard/showItemShop',
+      }) 
       })
       .catch(err => {
       console.log(err);

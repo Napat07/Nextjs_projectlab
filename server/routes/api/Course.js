@@ -19,6 +19,8 @@ router.get("/", async (req, res) => {
   });
 });
 router.post("/", async (req, res) => {
+  console.log("New Course:"+req.body.courseName)
+  console.log(req.body.courseDetail)
   const newCourse = new Course({
     courseName: req.body.courseName,
     courseImage: req.body.courseImage,
@@ -28,6 +30,7 @@ router.post("/", async (req, res) => {
   });
     newCourse.save().then(data => {
       res.status(200).json(data);
+      console.log("Success Add Course:"+req.body.courseName)
     });
 });
 

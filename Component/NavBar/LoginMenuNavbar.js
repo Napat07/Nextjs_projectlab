@@ -123,6 +123,7 @@ if(modal){
     </div>
   );
 }
+  //######################### For Login User Here ##########################
 if(!GlobalHook.getglobalToken){
     return (
       <div>
@@ -159,15 +160,13 @@ if(!GlobalHook.getglobalToken){
         </div>
     );
   } 
+  //######################### For Login Admin Here ##########################
   else {
-      console.log(GlobalHook.getglobalUser)
     return (
       <div>
         
         <Wrapper>
         <p>Hello:{GlobalHook.getglobalUser.Username}</p>
-        {console.log("Role:"+GlobalHook.getglobalUser.role)}
-        
         {GlobalHook.getglobalUser.role=="admin"? <Link href="/AdminDashBoard/adminDashBoardShop" >
           Admin Page
         </Link>:
