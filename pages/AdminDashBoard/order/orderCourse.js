@@ -1,6 +1,8 @@
 import React,{useState}  from 'react';
 import Formm from '../../../Component/form'
 import Head from '../../../Component/head.js';
+import HeaderTitle from "../../../Component/DashBoard/HeaderTitle"
+import Router from 'next/router';
 import axios from 'axios';
 import {  Col, 
           Button, 
@@ -13,20 +15,25 @@ import {  Col,
           NavItem, 
           NavLink,
           Container,
-          Row  } 
+          Row,
+          Table  } 
           from 'reactstrap';
          
 export default function orderCourse() {
+    function HandleClike(){
+        Router.push({
+            pathname: '/AdminDashBoard/order/orderCourseHistry',
+            
+        })
+    }
     return (
         <div>
                     <div>
              <div>
-            <Head title="Shop - Project Lab" />
+            <Head title="COURSE - ORDER HISTRY" />
             <Formm>
             <br/>
-            <br/>
-            <br/>
-            <br/>
+            <HeaderTitle Name={"COURSE - ORDER HISTRY"}/>
             
             <div className="container">
             <div className="row">
@@ -64,9 +71,60 @@ export default function orderCourse() {
                 </div>
               </div>
               <div className="col-lg-10" >
-                <div className="row" >
-               orderCourse Page
-                </div>
+              <Row>
+                    <h2 style={{marginTop:"25px",marginLeft:"15px"}}>COURSE ORDER HISTRY</h2>
+                </Row>
+                    <div style={{backgroundColor:"powderblue",height:"4px",marginTop:"5px"}}/>
+                <Row  style={{marginTop:"15px"}}>
+                    <Col sm ="2" >
+                        <h4 style={{marginLeft:"25px",marginTop:"5px"}}>SEARCH :</h4>
+                    </Col>
+                    <Col >
+                        <Input placeholder="Search"></Input>
+                    </Col>
+                </Row>
+                <Row style={{marginLeft:"25px",marginTop:"50px"}}>
+                    <Col>
+                        <Table striped bordered  className="text-center">
+                            <thead>
+                                <tr  style={{backgroundColor:"Silver"}} >
+                                    <th>DATE</th>
+                                    <th>User Name</th>
+                                    <th>INVOICE NO.</th>
+                                    <th>TOTAL</th>
+                                    <th>STATUS</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">10/02/2019</th>
+                                    <td onClick={HandleClike}>
+                                        <a>
+                                            Palatip
+                                        </a>
+                                    </td>
+                                    <td>-</td>
+                                    <td>50 thb</td>
+                                    <td style={{color:"red"}}>unpaid</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">11/01/2019</th>
+                                    <td>Mark</td>
+                                    <td>INV-00004</td>
+                                    <td >750 thb</td>
+                                    <td className="text-success">complete</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">11/01/2019</th>
+                                    <td>Pimchanak</td>
+                                    <td>INV-00005</td>
+                                    <td>7500 thb</td>
+                                    <td className="text-success">complete</td>
+                                </tr>
+                                </tbody>
+                        </Table>
+                    </Col>
+                </Row>
               </div>
             </div>
           </div>    
