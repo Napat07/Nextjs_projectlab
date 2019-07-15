@@ -128,11 +128,43 @@ async function handleSubmit(){
                     </Col>
                   </FormGroup>
                 </Form>
+                <ul class="weekdays">
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            </ul>
+            <ul class="days" ng-repeat="(weekIndex, week) in weeks">
+              <li class="day" ng-repeat="(dayIndex, day) in week.days" ng-class="(day.month-1 != commonData.filteredMonth) ? 'other-month' : '' ">
+                  <div class="header">
+                      <small class="text-muted"> oo</small>
+                      <span title="Create Event" class="icon-button float-right" data-toggle="modal" data-target="#createEventModal" ng-show="day.month-1 == commonData.filteredMonth" ng-click="addEvent(day.year, day.month, day.date, weekIndex, dayIndex)"><i class="ion ion-plus-round"></i></span>
+                  </div>
+                  <div class="event" ng-repeat="(eventIndex, event) in day.events">
+                      <div class="event-title">
+                          <span class="float-right">
+                                <i class="ion ion-eye" title="View Event" data-toggle="modal" data-target="#viewEventModal" ng-click="viewEvent(event.title, event.description)"></i>
+                                <i class="ion ion-edit" title="Edit Event" data-toggle="modal" data-target="#editEventModal" ng-click="editEvent(day.year, day.month, day.date, weekIndex, dayIndex, eventIndex, event._id, event.title, event.description)"></i>
+                                <i class="ion ion-ios-trash" title="Delete Event" ng-click="deleteEvent(weekIndex, dayIndex, eventIndex, event._id)"></i>
+                          </span>
+                      </div>
+                  </div>
+              </li>
+            </ul>
+            <h5 class="modal-title">Create Event</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
                   <FormGroup check row>
                     <Col >
                       <Button type="submit" color="primary" onClick={handleSubmit} >Submit</Button>
                     </Col>
                   </FormGroup>
+                  
             </Col>
           </Row>
         </Container>
@@ -140,6 +172,8 @@ async function handleSubmit(){
     </div>
   )
 }
+
+
 adminDashBoardCourse.modules = {
   toolbar: [
       [{ 'size': ['small', false, 'large', 'huge'] }],

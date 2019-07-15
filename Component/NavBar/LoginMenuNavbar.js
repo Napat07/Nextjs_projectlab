@@ -166,15 +166,14 @@ if(!GlobalHook.getglobalToken){
       <div>
         
         <Wrapper>
-        <p>Hello:{GlobalHook.getglobalUser.Username}</p>
-        {GlobalHook.getglobalUser.role=="admin"? <Link href="/AdminDashBoard/adminDashBoardShop" >
-          Admin Page
-        </Link>:
+        <p>Hello: {GlobalHook.getglobalUser.Username}</p>
+        {GlobalHook.getglobalUser.role=="admin"? 
+        <Button color="info"href="/AdminDashBoard/adminDashBoardShop" > Admin page </Button>:
         <div>User</div>}
        
        
         <Button  color="red" onClick={() => handleLogoutSubmit()}>
-          LogOut
+          Logout
             </Button>
       </Wrapper>
 
