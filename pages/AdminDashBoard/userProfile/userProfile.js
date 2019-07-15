@@ -17,6 +17,9 @@ import {  Col,
           from 'reactstrap';
          
 export default function userProfile() {
+
+    //const {getUser, setUser} = useState("");
+
     return (
         <div>
         <div>
@@ -62,11 +65,74 @@ export default function userProfile() {
                </Nav>
            </div>
          </div>
-         <div className="col-lg-10" >
-           <div className="row" >
-          userProfile Page
-           </div>
-         </div>
+         <Form >
+            <h1>Hello, Pear</h1>
+            <h5>USERNAME: PIMCHANOK-THA</h5>
+            
+            <FormGroup row>
+                <Col sm="4">
+                    <Label for="Username">Name/ชื่อ:</Label>
+                </Col>
+                <Col>
+                    <Input type="text" name="Username" />
+                </Col> 
+            </FormGroup>
+
+              
+            <FormGroup row>
+                <Col sm="4">
+                    <Label for="lastName">SURNAME/นามสกุล :</Label>
+                </Col>
+                <Col>
+                    <Input type="text" name="lastName"  />      
+                </Col>           
+            </FormGroup>
+
+
+            <FormGroup row>
+                <Col sm="4">
+                    <Label for="gender">GENDER/เพศ :</Label>
+                </Col>
+                <Col sm="4">
+                    <Input type="select" name="gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </Input>
+                 </Col>
+            </FormGroup>
+
+
+            <FormGroup row>
+                <Col sm="4">
+                    <Label for="phoneNumber" >MOBILE :</Label>
+                </Col>
+                <Col>
+                    <Input type="text" name="phoneNumber" />
+                </Col>          
+            </FormGroup>
+
+
+            <FormGroup row>
+                <Col sm="4">
+                    <Label for="email" >EMAIL/อีเมล์ :</Label>
+                </Col>
+                <Col>
+                    <Input type="email" name="email" />
+                </Col>          
+            </FormGroup>
+
+
+            <FormGroup row>
+                <Col sm="4">
+                    <Label for="address" >ADDRESS/ที่อยู่ :</Label>
+                </Col>
+                <Col>
+                    <Input type="text" name="address" />
+                </Col>          
+            </FormGroup>
+
+              
+      </Form>
        </div>
      </div>    
            </Formm>>
