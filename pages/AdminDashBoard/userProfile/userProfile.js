@@ -2,6 +2,7 @@ import React,{useState}  from 'react';
 import Formm from '../../../Component/form'
 import Head from '../../../Component/head.js';
 import axios from 'axios';
+import HeaderTitle from "../../../Component/DashBoard/HeaderTitle"
 import {  Col, 
           Button, 
           Form, 
@@ -23,17 +24,15 @@ export default function userProfile() {
     return (
         <div>
         <div>
-       <Head title="UserProfile" />
-       <Formm>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
+        <Head title="UserProfile" />
+            <Formm>
+                <br/>
+                <HeaderTitle Name={"USER PROFILE"}/>
+            <div className="container" style={{marginTop:"10px"}}>
+            <div className="row">
+              <div className="col-sm-2">
+              <div>
        
-       <div className="container">
-       <div className="row">
-         <div className="col-sm-2">
-         <div>
                <h2>หมวดหมู่</h2>
                <h4 style={{marginLeft:"10px",marginTop:"20px"}}>Shop</h4>
                <Nav vertical pills>
@@ -69,8 +68,9 @@ export default function userProfile() {
             <h1>Hello, Pear</h1>
             <h5>USERNAME: PIMCHANOK-THA</h5>
             
-            <FormGroup row>
-                <Col sm="4">
+            <div className="col-lg-10" >
+                <FormGroup row>
+                <Col sm="6">
                     <Label for="Username">Name/ชื่อ:</Label>
                 </Col>
                 <Col>
@@ -80,7 +80,7 @@ export default function userProfile() {
 
               
             <FormGroup row>
-                <Col sm="4">
+                <Col sm="6">
                     <Label for="lastName">SURNAME/นามสกุล :</Label>
                 </Col>
                 <Col>
@@ -90,10 +90,10 @@ export default function userProfile() {
 
 
             <FormGroup row>
-                <Col sm="4">
+                <Col sm="6">
                     <Label for="gender">GENDER/เพศ :</Label>
                 </Col>
-                <Col sm="4">
+                <Col sm="6">
                     <Input type="select" name="gender">
                         <option>Male</option>
                         <option>Female</option>
@@ -103,7 +103,7 @@ export default function userProfile() {
 
 
             <FormGroup row>
-                <Col sm="4">
+                <Col sm="6">
                     <Label for="phoneNumber" >MOBILE :</Label>
                 </Col>
                 <Col>
@@ -113,7 +113,7 @@ export default function userProfile() {
 
 
             <FormGroup row>
-                <Col sm="4">
+                <Col sm="6">
                     <Label for="email" >EMAIL/อีเมล์ :</Label>
                 </Col>
                 <Col>
@@ -123,13 +123,15 @@ export default function userProfile() {
 
 
             <FormGroup row>
-                <Col sm="4">
+                <Col sm="6">
                     <Label for="address" >ADDRESS/ที่อยู่ :</Label>
                 </Col>
                 <Col>
-                    <Input type="text" name="address" />
+                    <Input type="textarea" name="address" />
                 </Col>          
             </FormGroup>
+            </div>
+            
 
               
       </Form>
