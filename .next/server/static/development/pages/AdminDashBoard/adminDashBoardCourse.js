@@ -101,7 +101,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2585,6 +2585,39 @@ function adminDashBoardCourse() {
     return _handleSubmit.apply(this, arguments);
   }
 
+  function handleEvent() {
+    return _handleEvent.apply(this, arguments);
+  }
+
+  function _handleEvent() {
+    _handleEvent = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    /*#__PURE__*/
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var txt, event;
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              event = prompt("Please add event:", "Event");
+
+              if (event == null || event == "") {
+                alert("ไม่มีข้อมูล");
+              } else {
+                txt = event;
+              }
+
+              document.getElementById("demo").innerHTML = txt;
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _handleEvent.apply(this, arguments);
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     style: {
       marginTop: '20px'
@@ -2635,7 +2668,7 @@ function adminDashBoardCourse() {
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Label"], {
     for: "courseName",
     sm: 2
-  }, "Course Name"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
+  }, "Course Name : "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
     sm: 10
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Input"], {
     type: "text",
@@ -2648,7 +2681,7 @@ function adminDashBoardCourse() {
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Label"], {
     for: "courseImage",
     sm: 2
-  }, "Course Image"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
+  }, "Course Image : "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
     sm: 10
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Input"], {
     type: "text",
@@ -2661,68 +2694,26 @@ function adminDashBoardCourse() {
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Label"], {
     for: "courseDetail",
     sm: 2
-  }, "Text Editer"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
+  }, "Text Editer : "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
     sm: 10
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(DynamicReactQuill, {
     value: getcourseDetail,
     modules: adminDashBoardCourse.modules,
     formats: adminDashBoardCourse.formats,
     onChange: handleChangecourseDetail
-  })))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("ul", {
-    class: "weekdays"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Sunday"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Monday"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Tuesday"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Wednesday"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Thursday"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Friday"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", null, "Saturday")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("ul", {
-    class: "days",
-    "ng-repeat": "(weekIndex, week) in weeks"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", {
-    class: "day",
-    "ng-repeat": "(dayIndex, day) in week.days",
-    "ng-class": "(day.month-1 != commonData.filteredMonth) ? 'other-month' : '' "
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    class: "header"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("small", {
-    class: "text-muted"
-  }, " oo"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
-    title: "Create Event",
-    class: "icon-button float-right",
-    "data-toggle": "modal",
-    "data-target": "#createEventModal",
-    "ng-show": "day.month-1 == commonData.filteredMonth",
-    "ng-click": "addEvent(day.year, day.month, day.date, weekIndex, dayIndex)"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("i", {
-    class: "ion ion-plus-round"
-  }))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    class: "event",
-    "ng-repeat": "(eventIndex, event) in day.events"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-    class: "event-title"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
-    class: "float-right"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("i", {
-    class: "ion ion-eye",
-    title: "View Event",
-    "data-toggle": "modal",
-    "data-target": "#viewEventModal",
-    "ng-click": "viewEvent(event.title, event.description)"
-  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("i", {
-    class: "ion ion-edit",
-    title: "Edit Event",
-    "data-toggle": "modal",
-    "data-target": "#editEventModal",
-    "ng-click": "editEvent(day.year, day.month, day.date, weekIndex, dayIndex, eventIndex, event._id, event.title, event.description)"
-  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("i", {
-    class: "ion ion-ios-trash",
-    title: "Delete Event",
-    "ng-click": "deleteEvent(weekIndex, dayIndex, eventIndex, event._id)"
-  })))))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("h5", {
-    class: "modal-title"
-  }, "Create Event"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("button", {
-    type: "button",
-    class: "close",
-    "data-dismiss": "modal",
-    "aria-label": "Close"
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
-    "aria-hidden": "true"
-  }, "\xD7")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["FormGroup"], {
+  })))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["FormGroup"], {
+    row: true
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Label"], {
+    for: "courseImage",
+    sm: 2
+  }, "Calendar : "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], {
+    sm: 10
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
+    color: "info",
+    onClick: handleEvent
+  }, "add event "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("p", {
+    id: "demo"
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("style", null, "\n        html, body { \n          font-family: arial, sans-serif;\n          font-size: 15px;\n        }\n        \n        \n        * {\n          box-sizing: border-box;\n        }\n        \n        *:before {\n          box-sizing: border-box;\n        }\n        \n        *:after {\n          box-sizing: border-box;\n        }\n        \n        $min-width: 320px;\n        $number-of-days: 7;\n        $column-width: percentage(1/$number-of-days);\n        \n        .container {\n          max-width: 1000px;\n          margin-left: auto;\n          margin-right: auto;\n          padding-bottom: 1em;\n        }\n        \n        .row:before {\n          display: table;\n          content: \" \";\n        }\n        \n        .grid-calendar {\n          min-width: $min-width;\n          .row {\n            \n            margin: 0;\n            \n          }\n          \n          .calendar-week .grid-cell {\n            background-color: #f6f6f6;\n            border: 1px solid #fff;\n          }\n        \n          .calendar-week-header .grid-cell > div > div {\n            padding-bottom: 10px;\n            height: auto;\n          }\n          \n          .grid-cell {\n            display: inline-block;\n            float: left;\n            min-height: 1px;\n            padding: 0;\n            position: relative;\n            width: $column-width;\n        \n            &.previous-month {\n              color: #a6a6a6;\n            }\n            \n            &.next-month {\n              background-color: #e1e1e1;\n            }\n            \n            > div {\n              display: flex;\n              justify-content: center;\n              width: 100%;\n        \n              > div {\n                height: 0;\n                padding: 50% 0;\n              }\n            }\n          }\n        }\n        \n        \n        \n        \n      "))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["FormGroup"], {
     check: true,
     row: true
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Col"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_10__["Button"], {
@@ -2748,7 +2739,7 @@ adminDashBoardCourse.formats = ['bold', 'italic', 'underline', 'strike', 'size',
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!************************************************************!*\
   !*** multi ./pages/AdminDashBoard/adminDashBoardCourse.js ***!
   \************************************************************/

@@ -22,6 +22,9 @@ import {  Col,
           
 export default function adminDashBoardCourse() {
 
+
+
+
   const[getcourseName,setcourseName] = useState("") ;
   const[getcourseImage,setcourseImage] = useState("") ;
   const[getcourseActive,setcourseActive] = useState("") ;
@@ -62,6 +65,17 @@ async function handleSubmit(){
 
 }  
 
+async function handleEvent(){
+  var txt;
+  var event = prompt("Please add event:", "Event");
+  if (event == null || event == "") {
+    alert("ไม่มีข้อมูล");
+  } else {
+    txt = event;
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+  
   return (
     <div style={{marginTop: '20px'}}>
       <Head title="Add Course - Project Lab" />
@@ -106,19 +120,19 @@ async function handleSubmit(){
               <Form>
                 <h1>Add Course</h1>
                   <FormGroup row>
-                    <Label for="courseName" sm={2}>Course Name</Label>
+                    <Label for="courseName" sm={2}>Course Name : </Label>
                     <Col sm={10}>
                       <Input type="text" name="courseName" placeholder="Name" value={getcourseName} onChange={handleChangecourseName}/>
                     </Col>
                   </FormGroup>
                   <FormGroup row>
-                    <Label for="courseImage" sm={2}>Course Image</Label>
+                    <Label for="courseImage" sm={2}>Course Image : </Label>
                     <Col sm={10}>
                       <Input type="text" name="courseImage" placeholder="Image" value={getcourseImage}  onChange={handleChangecourseImage}/>
                     </Col>
                   </FormGroup>
                   <FormGroup row>
-                    <Label for="courseDetail" sm={2}>Text Editer</Label>
+                    <Label for="courseDetail" sm={2}>Text Editer : </Label>
                     <Col sm={10}>
                       <DynamicReactQuill 
                         value={getcourseDetail}
@@ -128,37 +142,103 @@ async function handleSubmit(){
                     </Col>
                   </FormGroup>
                 </Form>
-                <ul class="weekdays">
-                <li>Sunday</li>
-                <li>Monday</li>
-                <li>Tuesday</li>
-                <li>Wednesday</li>
-                <li>Thursday</li>
-                <li>Friday</li>
-                <li>Saturday</li>
-            </ul>
-            <ul class="days" ng-repeat="(weekIndex, week) in weeks">
-              <li class="day" ng-repeat="(dayIndex, day) in week.days" ng-class="(day.month-1 != commonData.filteredMonth) ? 'other-month' : '' ">
-                  <div class="header">
-                      <small class="text-muted"> oo</small>
-                      <span title="Create Event" class="icon-button float-right" data-toggle="modal" data-target="#createEventModal" ng-show="day.month-1 == commonData.filteredMonth" ng-click="addEvent(day.year, day.month, day.date, weekIndex, dayIndex)"><i class="ion ion-plus-round"></i></span>
-                  </div>
-                  <div class="event" ng-repeat="(eventIndex, event) in day.events">
-                      <div class="event-title">
-                          <span class="float-right">
-                                <i class="ion ion-eye" title="View Event" data-toggle="modal" data-target="#viewEventModal" ng-click="viewEvent(event.title, event.description)"></i>
-                                <i class="ion ion-edit" title="Edit Event" data-toggle="modal" data-target="#editEventModal" ng-click="editEvent(day.year, day.month, day.date, weekIndex, dayIndex, eventIndex, event._id, event.title, event.description)"></i>
-                                <i class="ion ion-ios-trash" title="Delete Event" ng-click="deleteEvent(weekIndex, dayIndex, eventIndex, event._id)"></i>
-                          </span>
-                      </div>
-                  </div>
-              </li>
-            </ul>
-            <h5 class="modal-title">Create Event</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                <FormGroup row>
+                    <Label for="courseImage" sm={2}>Calendar : </Label>
+                    <Col sm={10}>
+                      <Button color='info' onClick={handleEvent} >add event </Button>
+                      <p id="demo"></p>
+          
+<style>{`
+        html, body { 
+          font-family: arial, sans-serif;
+          font-size: 15px;
+        }
+        
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        *:before {
+          box-sizing: border-box;
+        }
+        
+        *:after {
+          box-sizing: border-box;
+        }
+        
+        $min-width: 320px;
+        $number-of-days: 7;
+        $column-width: percentage(1/$number-of-days);
+        
+        .container {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-bottom: 1em;
+        }
+        
+        .row:before {
+          display: table;
+          content: " ";
+        }
+        
+        .grid-calendar {
+          min-width: $min-width;
+          .row {
+            
+            margin: 0;
+            
+          }
+          
+          .calendar-week .grid-cell {
+            background-color: #f6f6f6;
+            border: 1px solid #fff;
+          }
+        
+          .calendar-week-header .grid-cell > div > div {
+            padding-bottom: 10px;
+            height: auto;
+          }
+          
+          .grid-cell {
+            display: inline-block;
+            float: left;
+            min-height: 1px;
+            padding: 0;
+            position: relative;
+            width: $column-width;
+        
+            &.previous-month {
+              color: #a6a6a6;
+            }
+            
+            &.next-month {
+              background-color: #e1e1e1;
+            }
+            
+            > div {
+              display: flex;
+              justify-content: center;
+              width: 100%;
+        
+              > div {
+                height: 0;
+                padding: 50% 0;
+              }
+            }
+          }
+        }
+        
+        
+        
+        
+      `}</style>
+ 
 
+                    </Col>
+                  </FormGroup>
+               
                   <FormGroup check row>
                     <Col >
                       <Button type="submit" color="primary" onClick={handleSubmit} >Submit</Button>
@@ -189,3 +269,4 @@ adminDashBoardCourse.modules = {
 adminDashBoardCourse.formats = [
   'bold','italic','underline','strike','size','color','background','list','indent','link','image','video','clean','code-block'
 ]
+
