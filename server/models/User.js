@@ -35,9 +35,15 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  role:{
+  gender:{
     type: String
   },
+  address:{
+    type: String
+  },
+  role:{
+    type: String
+  }
 });
 
 module.exports = UserSchema; 
