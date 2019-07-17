@@ -28,7 +28,7 @@ import {  Col,
         `;
 
     const TomatoButton = styled(B)`
-        color: #b1e2f4;
+        color: #FFFFFF;
         border-color: #42afd6;
         background-color: #27c5ea;
         `;   
@@ -37,7 +37,6 @@ export default function userProfile() {
 
     //const {getUser, setUser} = useState("");
     
-
         return (
             <div>
             <div>
@@ -85,23 +84,26 @@ export default function userProfile() {
                 
                 <div className="col-lg-10" >
                     <Row>
-                        <h3 style={{marginTop:"25px",marginLeft:"15px"}}>Hello, Pear</h3>
+                        <h3 style={{marginTop:"25px",marginLeft:"15px",color:"#525f81"}}>Hello, Pear</h3>
                     </Row>
                     <Row>
-                        <h6 style={{marginLeft:"10px"}}>USERNAME: PIMCHANOK-THA</h6>
+                        <h6 style={{marginLeft:"10px",color:"#42afd6"}}>USERNAME: PIMCHANOK-THA</h6>
                     </Row>
                     <div style={{backgroundColor:"powderblue",height:"4px",marginTop:"5px"}}/>
                     <div style={{marginTop:"15px",marginLeft:"30px"}}/>
+
+                    <Row>
+                        <h3 style={{marginTop:"25px",marginLeft:"15px",color:"#525f81"}}>PROFILE:</h3>
+                    </Row>
                     
                 <FormGroup row>
                     <Col sm="2">
-                        <Label for="Username" style={{color:"#42afd6"}}>Name/ชื่อ:</Label>
+                        <Label for="firstName" style={{color:"#42afd6"}}>Name/ชื่อ:</Label>
                     </Col>
                     <Col sm="4">
-                        <Input type="text" name="Username" />
+                        <Input type="text" name="firstName" />
                     </Col> 
-                </FormGroup>
-    
+                </FormGroup>    
                   
                 <FormGroup row>
                     <Col sm="2">
@@ -111,8 +113,7 @@ export default function userProfile() {
                         <Input type="text" name="lastName"  />      
                     </Col>           
                 </FormGroup>
-    
-    
+        
                 <FormGroup row>
                     <Col sm="2">
                         <Label for="gender" style={{color:"#42afd6"}}>GENDER/เพศ :</Label>
@@ -123,8 +124,7 @@ export default function userProfile() {
                             <option>Female</option>
                         </Input>
                      </Col>
-                </FormGroup>
-    
+                </FormGroup>    
     
                 <FormGroup row>
                     <Col sm="2">
@@ -133,8 +133,7 @@ export default function userProfile() {
                     <Col sm="4">
                         <Input type="text" name="phoneNumber" />
                     </Col>          
-                </FormGroup>
-    
+                </FormGroup>    
     
                 <FormGroup row>
                     <Col sm="2">
@@ -144,8 +143,7 @@ export default function userProfile() {
                         <Input type="email" name="email" />
                     </Col>          
                 </FormGroup>
-    
-    
+        
                 <FormGroup row>
                     <Col sm="2">
                         <Label for="address" style={{color:"#42afd6"}}>ADDRESS/ที่อยู่ :</Label>
@@ -156,7 +154,7 @@ export default function userProfile() {
                 </FormGroup>
 
                 <Row>
-                    <TomatoButton>SAVE</TomatoButton>
+                    <TomatoButton> SAVE </TomatoButton>
                 </Row>
                 </div>       
     
