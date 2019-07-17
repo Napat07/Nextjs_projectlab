@@ -1,5 +1,4 @@
 import React,{useState}  from 'react';
-import styled from 'styled-components';
 import Formm from '../../Component/form'
 import Head from '../../Component/head.js';
 import HeaderTitle from "../../Component/DashBoard/HeaderTitle"
@@ -16,22 +15,6 @@ import {  Col,
           Container,
           Row  } 
           from 'reactstrap';
-      
-    const B = styled.button`
-        display: inline-block;
-        font-size: 1em;
-        margin: 0 auto;
-        padding: 0.5em 1.5em;
-        border: 2px solid palevioletred;
-        border-radius: 3px;
-        display: block;
-        `;
-
-    const TomatoButton = styled(B)`
-        color: #FFFFFF;
-        border-color: #42afd6;
-        background-color: #27c5ea;
-        `;   
 
 export default function userProfile() {
 
@@ -151,7 +134,20 @@ export default function userProfile() {
                 <br />
 
                 <Row>
-                    <TomatoButton> SAVE </TomatoButton>
+                    <button style={{
+                        display:" inline-block",
+                        fontSize: "1em",
+                        margin: "0 auto",
+                        padding: "0.5em 1.5em",
+                        border: "2px solid palevioletred",
+                        borderRadius: "3px",
+                        display: "block",        
+                        color: "#FFFFFF",
+                        borderColor: "#42afd6",
+                        backgroundColor:" #27c5ea"
+                        }}> 
+                        
+                        SAVE </button>
                 </Row>
                 </div>       
                 </div>
