@@ -3,7 +3,7 @@
     "static/development/dll/dll_599a58a60c43245180de.js"
   ],
   "pages": {
-    "/AdminDashBoard/order/orderShop": [
+    "/AdminDashBoard/order/orderShopHistry": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
