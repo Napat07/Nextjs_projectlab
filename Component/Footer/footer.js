@@ -6,7 +6,9 @@ import { FaFacebookSquare,FaYoutube } from "react-icons/fa";
 import Link from 'next/link';
 function Footer () {
     return (
-        <div className="justify-content-center">
+        <div className="justify-content-center align-self-end">
+                <br/>
+                <br/>
             <footer  className="Footer-BackGround-Color">
             <Container >
                 <Row >

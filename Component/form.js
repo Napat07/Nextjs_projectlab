@@ -4,7 +4,7 @@ import Foot from './Footer/footer.js' ;
 import Str from '../hook/GlobalHook.js'
 export default function Sign(props) {
   return (
-    <div >
+    <div  >
      
       <Str>
       <Navbar/>
