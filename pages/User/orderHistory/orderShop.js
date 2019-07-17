@@ -1,47 +1,51 @@
 import React,{useState}  from 'react';
-import Formm from '../../Component/form'
-import Head from '../../Component/head.js';
-import HeaderTitle from "../../Component/DashBoard/HeaderTitle"
+import Formm from '../../../Component/form'
+import Head from '../../../Component/head.js';
+import HeaderTitle from "../../../Component/DashBoard/HeaderTitle"
 import {  Col, 
           Button, 
           Form, 
           FormGroup, 
           Label, 
           Input, 
-          FormText,
           Nav, 
           NavItem, 
           NavLink,
-          Container,
-          Row  } 
+          Row,
+          Table  } 
           from 'reactstrap';
 
 export default function userProfile() {
 
-    //const {getUser, setUser} = useState("");  
+    function HandleClike(){
+        Router.push({
+            pathname: '/User/orderHistory/historyShop',
+            
+        })
+    }
 
-        return (
+       return (
             <div>
             <div>
-            <Head title="UserProfile" />
+            <Head title="ORDER HISTORY - SHOP" />
                 <Formm>
                     <br/>
-                    <HeaderTitle Name={"USER PROFILE"}/>
+                    <HeaderTitle Name={"ORDER HISTORY - SHOP"}/>
                 <div className="container" style={{marginTop:"10px"}}>
                 <div className="row">
                   <div className="col-sm-2">
                   <div>
            
-                   <h5 style={{marginLeft:"10px",marginTop:"20px",color:"#f0ab66"}}>USER PROFILE</h5>
+                   <h5 style={{marginLeft:"10px",marginTop:"20px",color:"#646595"}}>USER PROFILE</h5>
                    <Nav vertical pills>
                        <NavItem>
-                           <NavLink href="/User/userPage"active  >แก้ไข</NavLink>
+                           <NavLink href="/User/userPage" style={{color:"#9b9e93"}} >แก้ไข</NavLink>
                        </NavItem>
                        
                        <NavItem>
                     <hr />
-                    <h5 style={{marginLeft:"10px",color:"#646595"}}>ORDER HISTORY</h5>
-                           <NavLink href="/User/orderHistory/orderShop" style={{color:"#9b9e93"}}>คำสั่งซื้อสินค้า</NavLink>
+                    <h5 style={{marginLeft:"10px",color:"#f0ab66"}}>ORDER HISTORY</h5>
+                           <NavLink href="/User/orderHistory/orderShop" active>คำสั่งซื้อสินค้า</NavLink>
                            <NavLink href="/User/orderHistory/orderCourse" style={{color:"#9b9e93"}} >คำสั่งซื้อคอร์ส</NavLink>    
                        </NavItem>
                     
@@ -66,89 +70,61 @@ export default function userProfile() {
                     <div style={{marginTop:"15px",marginLeft:"30px"}}/>
                     
                     <Row>
-                        <h3 style={{marginTop:"25px",marginLeft:"15px",color:"#525f81"}}>PROFILE:</h3>
+                        <h3 style={{marginTop:"25px",marginLeft:"15px",color:"#525f81"}}>SHOP ORDER HISTORY:</h3>
                     </Row>
 
-                <FormGroup row>
-                    <Col sm="2">
-                        <Label for="firstName" style={{color:"#42afd6"}}>Name/ชื่อ:</Label>
-                    </Col>
-                    <Col sm="4">
-                        <Input type="text" name="firstName" />
-                    </Col> 
-                </FormGroup>
-                      
-                <FormGroup row>
-                    <Col sm="2">
-                        <Label for="lastName" style={{color:"#42afd6"}}>SURNAME/นามสกุล :</Label>
-                    </Col>
-                    <Col sm="4">
-                        <Input type="text" name="lastName"  />      
-                    </Col>           
-                </FormGroup>    
-    
-                <FormGroup row>
-                    <Col sm="2">
-                        <Label for="gender" style={{color:"#42afd6"}}>GENDER/เพศ :</Label>
-                    </Col>
-                    <Col sm="2">
-                        <Input type="select" name="gender">
-                            <option>Male</option>
-                            <option>Female</option>
-                        </Input>
-                     </Col>
-                </FormGroup>    
-    
-                <FormGroup row>
-                    <Col sm="2">
-                        <Label for="phoneNumber" style={{color:"#42afd6"}}>MOBILE :</Label>
-                    </Col>
-                    <Col sm="4">
-                        <Input type="text" name="phoneNumber" />
-                    </Col>          
-                </FormGroup>    
-    
-                <FormGroup row>
-                    <Col sm="2">
-                        <Label for="email" style={{color:"#42afd6"}}>EMAIL/อีเมล์ :</Label>
-                    </Col>
-                    <Col sm="4">
-                        <Input type="email" name="email" />
-                    </Col>          
-                </FormGroup>    
-    
-                <FormGroup row>
-                    <Col sm="2">
-                        <Label for="address" style={{color:"#42afd6"}}>ADDRESS/ที่อยู่ :</Label>
-                    </Col>
-                    <Col sm="6">
-                        <Input type="textarea" name="address" />
-                    </Col>          
-                </FormGroup>
+                    <Row style={{marginLeft:"25px",marginTop:"50px"}}>
+                        <Col>
+                            <Table striped bordered  className="text-center">
+                                <thead>
+                                <tr  style={{backgroundColor:"Silver"}} >
+                                    <th>DATE</th>
+                                    <th>INVOICE NO.</th>
+                                    <th>TOTAL</th>
+                                    <th>STATUS</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row" onClick={HandleClike}>
+                                        <a>
+                                            10/02/2019
+                                        </a>
+                                    </th>
+                                    <td>-</td>
+                                    <td>1070 thb</td>
+                                    <td style={{color:"red"}}>unpaid</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" onClick={HandleClike}>
+                                        <a>
+                                            11/01/2019
+                                        </a>
+                                    </th>
+                                    <td>INV-00001</td>
+                                    <td>2140 thb</td>
+                                    <td className="text-success">complete</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" onClick={HandleClike}>
+                                        <a>
+                                            10/01/2019
+                                        </a>
+                                    </th>
+                                    <td>INV-00001</td>
+                                    <td>1000 thb</td>
+                                    <td className="text-success">complete</td>
+                                </tr>
+                                </tbody>
+                            </Table>
+                        </Col>
+                    </Row>
 
                 <br />
 
                 <div style={{backgroundColor:"powderblue",height:"4px",marginTop:"5px"}}/>
                 <div style={{marginTop:"15px",marginLeft:"30px"}}/>
 
-                <br />
-
-                <Row>
-                    <button style={{
-                        display:" inline-block",
-                        fontSize: "1em",
-                        margin: "0 auto",
-                        padding: "0.5em 1.5em",
-                        border: "2px solid palevioletred",
-                        borderRadius: "3px",
-                        display: "block",        
-                        color: "#FFFFFF",
-                        borderColor: "#42afd6",
-                        backgroundColor:" #27c5ea"
-                        }}> 
-                        
-                        SAVE </button>
-                </Row>
                 </div>       
                 </div>
                 </div>    
