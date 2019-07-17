@@ -3,19 +3,30 @@ import Form from '../../Component/form.js'
 import Head from '../../Component/head.js';
 import './CourseStyle.css';
 import { Nav, NavItem, NavLink,Row,Col,Container } from 'reactstrap';
-export default function courseInformation() {
+import HeadTitle from "../../Component/DashBoard/HeaderTitle"
+export default function courseInformation(props) {
     return (
         <div>
             <Head title="Education - Project Lab" />
             <Form >
-        <header className="masthead">
-          <div class="container h-100">
-            <div class="row h-100 align-items-center">
-              <div class="col-12 text-center">
+            <br/>
+            <HeadTitle Name={"Robotics Courses (in House)"}/>
+            <br/>
+            <header style={{
+                height: "100vh",
+                minHeight: "500px",
+                backgroundImage: "url('https://www.techtalkthai.com/wp-content/uploads/2019/04/IMG_2173.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+            }}>
+              <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                  <div class="col-12 text-center">
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </header>
+            </header>
         <Container>
         <Nav>
           <NavItem>
