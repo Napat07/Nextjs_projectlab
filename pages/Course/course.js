@@ -18,7 +18,7 @@ import {
 import './CourseStyle.css';
 import HeadTitle from "../../Component/DashBoard/HeaderTitle"
 export default function Course () {
-  const[getNameCourse,setNameCourse] = useState("Mbot")
+  const[getNameCourse,setNameCourse] = useState("MOJOBOT")
   function HandleClike (){
     Router.push({
       pathname: '/Course/courseinformation',
@@ -82,13 +82,7 @@ export default function Course () {
                 </Col>
               </Row>
             </Col>
-            
-            
-              
-
-
           </Row>
-
           <Nav style={{marginTop:"50px"}}>
             <NavItem>
               <NavLink href="#">Our philisophy</NavLink>
@@ -96,7 +90,6 @@ export default function Course () {
             <div style={{backgroundColor:"Gray",height:"12px",width:"100%"}}/>
           </Nav>
         </div>
-
         <p style={{marginTop:"25px"}}>At Project Lab we affer project base. robotics STEM education course that are designed especially for children but
         recommended and available for all interested persons. STEM education is an interdisciplinary education combining Science</p>
         <Row >
@@ -104,11 +97,8 @@ export default function Course () {
             <img  src="http://projectlab.co.th/static/frontend/school/img/course.jpg" />
           </Col>
         </Row>
-
         </Container>
-        
       </Form >
-
     </div>
       );
     

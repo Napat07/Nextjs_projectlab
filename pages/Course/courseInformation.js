@@ -40,21 +40,18 @@ export default function courseInformation(props) {
         </div>
         <Row style={{marginTop:"20px"}}>
             <Col>
-            <h2 >mojobot Course</h2>
+            <h2 >{props.url.query.name} COURSE</h2>
             <Row>
-                <Col sm="3">
-                    <h5>Ace:4-7</h5> 
-                </Col>
-                <Col sm="9">
-                    <p>Computational Thinking :: Programming :: Innovative Thinking</p>
+                <Col sm="10">
+                    <h5>Ace:4-7 </h5>  <p>Computational Thinking :: Programming :: Innovative Thinking</p>
                 </Col>
             </Row>
             </Col>
-            <Col> 
+            <Col > 
                <button>Sign up Now</button>
             </Col>
         </Row>
-        CLASS SIZE : 4 STUDENTS<br/>
+        CLASS SIZE : 4 STUDENTS
         DURATION : 8 HOURS ( 2 HOURS / CLASS )<br/>
         FEE / STUDENT : 7,200 THB<br/>
         COURSE DETAIL : Kids code virtual 3D robots in an engaging online environment, making this an easy, ecient and
