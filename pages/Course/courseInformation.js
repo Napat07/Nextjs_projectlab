@@ -64,7 +64,7 @@ export default function courseInformation(props) {
             <Col > 
                <Button onClick={HandleClick} color="primary">Sign up Now</Button>
             </Col>
-        </Row>
+        </Row> 
 
         <div className="d-flex justify-content-start">
             <h6 style={{color:"LightSeaGreen",fontWeight:"900"}}>CLASS SIZE : </h6>

@@ -66,7 +66,7 @@ export default function paymentCourse() {
                             &nbsp;
                             <h6 style={{fontWeight:"bolder",color:"#69cde5"}}>THB</h6>
                         </div>
-                    </div>
+                    </div> 
                 </div>
         {/* ####################### Border End Here.. ####################### */}
                 <div className="text-center">

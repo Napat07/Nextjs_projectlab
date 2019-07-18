@@ -32,7 +32,7 @@ export default function courseregisform(props) {
                     </NavItem>
                 </Nav>
                 <div style={{backgroundColor:"Gray",height:"12px",width:"100%"}}/>
-                <br/>
+                <br/> 
 
                 <h3 style={{fontWeight:"bolder",padding:"5px"}}>APPLICATION FEE</h3>
                 <div style={{color:"LightSeaGreen"}}>
