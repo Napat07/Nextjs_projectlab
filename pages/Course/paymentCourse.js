@@ -29,18 +29,23 @@ export default function paymentCourse() {
 
         {/* ####################### Border Start Here.. ####################### */}
 
-                <div style={{borderStyle: "solid",borderWidth: "1px",marginTop:"100px"}}>
-                    <div style={{margin:"0 auto"}}>
-                        <h3>Thank You for registered our course</h3>
+                <div style={{
+                            borderStyle: "solid",borderWidth: "1px",
+                            borderColor:"#c2c2a3",marginTop:"100px",
+                            
+
+                            }}>
+                    <div style={{padding:"25px"}}>
+                        <h3 style={{color:"#69cde5",fontWeight:"500"}}>Thank You for registered our course</h3>
                         <div style={{backgroundColor:"#69cde5",height:"2px",width:"100%"}}/>
                         
                         <div className="d-flex justify-content-start">
-                            <h6 style={{color:"#69cde5",fontWeight:"900"}}>NAME : </h6>
+                            <h6 style={{color:"#69cde5",fontWeight:"900",marginTop:"15px"}}>NAME : </h6>
                             &nbsp;
                             &nbsp;
                             &nbsp;  
-                            <h6 style={{fontWeight:"bolder"}}>XXXXXX</h6>
-                        </div>
+                            <h6 style={{fontWeight:"bolder",marginTop:"15px"}}>XXXXXX</h6>
+                        </div><br/>
                         
                         <div className="d-flex justify-content-start">
                             <h6 style={{color:"#69cde5",fontWeight:"900"}}>SURNAME : </h6>
@@ -48,20 +53,24 @@ export default function paymentCourse() {
                             &nbsp;
                             &nbsp;  
                             <h6 style={{fontWeight:"bolder"}}>XXXXXX</h6>
-                        </div>
+                        </div><br/>
+
                         <div className="d-flex justify-content-start">
                             <h6 style={{color:"#69cde5",fontWeight:"900"}}>MOBILE NO. : </h6>
                             &nbsp;
                             &nbsp;
                             &nbsp;  
                             <h6 style={{fontWeight:"bolder"}}>XXXXXX</h6>
-                        </div>
+                        </div><br/>
+
                         <div className="d-flex justify-content-start">
                             <h6 style={{color:"#69cde5",fontWeight:"900"}}>Total Amount : </h6>
                             &nbsp;
                             &nbsp;
-                            &nbsp;  
-                            <h6 style={{fontWeight:"bolder"}}>XXXXXX</h6>
+                            &nbsp;
+                            <div style={{border:"solid",borderWidth: "1px"}}>
+                                <h6 style={{fontWeight:"700",color:"#69cde5",padding:"5px 10px 2px 10px"}}>7,200</h6> 
+                            </div>  
                             &nbsp;
                             &nbsp;
                             <h6 style={{fontWeight:"bolder",color:"#69cde5"}}>THB</h6>
