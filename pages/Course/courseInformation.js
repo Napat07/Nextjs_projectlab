@@ -101,7 +101,7 @@ export default function courseInformation(props) {
         <h6 style={{color:"LightSeaGreen",fontWeight:"900"}}>CLASS SCHEDULE : FIXED SCHEDULE*</h6>
         <div className="d-flex justify-content-start">
           <h6 style={{fontWeight:"500"}}>DAY :</h6>
-          <h6>SUNDAY</h6>
+          <h6>SUNDAY</h6> 
         </div>
 
         <h6 style={{fontWeight:"500"}}>TIME :</h6>

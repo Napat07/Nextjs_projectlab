@@ -104,7 +104,7 @@ export default function courseregisform(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm ={2}>
+                    <Col sm ={2}> 
                         <h6 style={{fontWeight:"500"}}>COURSE START :</h6>
                     </Col>
                     <Col sm ={3}>
