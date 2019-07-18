@@ -6,9 +6,14 @@ import './CourseStyle.css';
 import { Nav, NavItem, NavLink,Row,Col,Container,Button,Input,Form,FormGroup,Label } from 'reactstrap';
 import HeadTitle from "../../Component/DashBoard/HeaderTitle"
 export default function courseregisform(props) {
+  function HandleClick (){
+    Router.push({
+      pathname: '/Course/paymentCourse',
+  })
+  }
     return (
         <div>
-             <Head title="Education - Project Lab" />
+             <Head title="Course - Regisform" />
             <Formm >
             <br/>
             <HeadTitle Name={"APPLICATION FORM (MOJOBOT)"}/>
@@ -116,7 +121,7 @@ export default function courseregisform(props) {
             <div className="text-center" > 
                 <img src="https://ugcorigin.s-microsoft.com/100/76a5c0d8-dc90-4f9d-9a22-28c2d169b1c2/200/v1/image.jpg"/>
                 <br/>
-                <Button  color="primary">SEND APPLICATION</Button>
+                <Button onClick={HandleClick} color="primary">SEND APPLICATION</Button>
             </div>
             
             </Container>

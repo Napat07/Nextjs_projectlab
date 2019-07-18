@@ -17,7 +17,7 @@ export default function courseInformation(props) {
   }
     return (
         <div>
-            <Head title="Education - Project Lab" />
+            <Head title="Course - Information" />
             <Form >
             <br/>
             <HeadTitle Name={"Robotics Courses (in House)"}/>
