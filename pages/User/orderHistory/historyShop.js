@@ -2,6 +2,7 @@ import React,{useState}  from 'react';
 import Formm from '../../../Component/form'
 import Head from '../../../Component/head.js';
 import HeaderTitle from "../../../Component/DashBoard/HeaderTitle"
+import Router from 'next/router';
 import {  Col, 
           Button, 
           Form, 
@@ -16,6 +17,13 @@ import {  Col,
           from 'reactstrap';
 
 export default function historyShop() {
+
+    function HandleClick() {
+        Router.push({
+            pathname: '/User/orderHistory/orderShop',
+            
+        })
+    }
 
        return (
             <div>
@@ -159,7 +167,7 @@ export default function historyShop() {
                         color: "#FFFFFF",
                         borderColor: "#42afd6",
                         backgroundColor:" #27c5ea"
-                        }}> 
+                        }} onClick={HandleClick}> 
                         
                         BACK </button>
                     
