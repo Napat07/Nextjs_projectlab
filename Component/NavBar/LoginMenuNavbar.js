@@ -29,8 +29,6 @@ const Wrapper = styled.div`
 align-items:center;
 `;
 
-
-
 function Auth(props) {
     
   const GlobalHook = useContext(GlobalContext);
@@ -55,13 +53,13 @@ function Auth(props) {
          GlobalHook.setglobalUser(user)
        const currentTime = Date.now() / 1000;
        const decoded = jwt_decode(token);
-   if (decoded.exp < currentTime) {
+   
+    if (decoded.exp < currentTime) {
      handleLogoutSubmit()
      Router.push({
        pathname: '/'
      })
    }
-
      }
    }, []);
 
@@ -93,9 +91,6 @@ function Auth(props) {
       setmodal(true) ;
     }
       );
-    
-    
-
   }
 
   ///////
@@ -106,6 +101,10 @@ function Auth(props) {
     GlobalHook.setglobalUser({});
     GlobalHook.setglobalToken();
     props.setisUserDropDownOpen(false)
+
+    Router.push({
+      pathname: '/index'
+    })
 
   };
 if(modal){
@@ -171,7 +170,6 @@ if(!GlobalHook.getglobalToken){
         <Button color="info"href="/AdminDashBoard/adminDashBoardShop" > Admin page </Button>:
         <Button color="info"href="/User/userPage" > User page </Button>}
        
-       
         <Button  color="red" onClick={() => handleLogoutSubmit()}>
           Logout
             </Button>
@@ -181,12 +179,6 @@ if(!GlobalHook.getglobalToken){
 
 );
   }
-
-
-
-
 }
-
-
 
 export default Auth;
