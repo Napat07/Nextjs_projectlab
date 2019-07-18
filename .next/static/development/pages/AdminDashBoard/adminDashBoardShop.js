@@ -44690,7 +44690,7 @@ function AddProduct() {
 
 /***/ }),
 
-/***/ 12:
+/***/ 13:
 /*!***************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FAdminDashBoard%2FadminDashBoardShop&absolutePagePath=%2FUsers%2Fnapat%2FDesktop%2FNextjs_projectlab%2Fpages%2FAdminDashBoard%2FadminDashBoardShop.js ***!
   \***************************************************************************************************************************************************************************************************/
@@ -44713,5 +44713,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[12,"static/runtime/webpack.js","styles"]]]);
+},[[13,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=adminDashBoardShop.js.map

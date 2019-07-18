@@ -21,10 +21,6 @@ import {  Col,
           from 'reactstrap';
           
 export default function adminDashBoardCourse() {
-
-
-
-
   const[getcourseName,setcourseName] = useState("") ;
   const[getcourseImage,setcourseImage] = useState("") ;
   const[getcourseActive,setcourseActive] = useState("") ;
@@ -44,7 +40,8 @@ function handleChangecourseImage(inputImage) {
 function handleChangecourseDetail(inputDetail) {
   setcourseDetail(inputDetail)
   console.log(inputDetail)
-}   
+}
+   
 async function handleSubmit(){
   const inputs = {
     "courseName":getcourseName,
@@ -64,6 +61,7 @@ async function handleSubmit(){
           })
 
 }  
+
 
 async function handleEvent(){
   var txt;
@@ -145,90 +143,177 @@ async function handleEvent(){
                 <FormGroup row>
                     <Label for="courseImage" sm={2}>Calendar : </Label>
                     <Col sm={10}>
-                      <Button color='info' onClick={handleEvent} >add event </Button>
+                    <a onClick={handleEvent} class="btn btn-info pull-right" role="button">
+                        <i class="fa fa-plus"></i> add event
+                        </a>
                       <p id="demo"></p>
+          
+                      <table class="calendar">
+  <tr>
+    <th>Friday</th>
+    <th>Saturay</th>
+    <th>Sunday</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+  </tr>
+  <tr>
+    <td class="muted">28</td>
+    <td class="muted">29</td>
+    <td class="muted">30</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td class="todo">5<div class="bubble">Mojobot Class</div></td>
+    <td class="todoo">6<div class="bubbleo">mBot Class</div></td>
+    <td class="todop">7<div class="bubblep">Tech Creator Class</div></td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+    <td>11</td>
+
+  </tr>
+  <tr>
+    <td class="todo">12<div class="bubble">Mojobot Class</div></td>
+    <td class="todoo">13<div class="bubbleo">mBot Class</div></td>
+    <td class="todop">14<div class="bubblep">Tech Creator Class</div></td>
+    <td>15</td>
+    <td>16</td>
+    <td>17</td>
+    <td class="today">18</td>
+  </tr>
+  <tr>
+    <td class="todo">19<div class="bubble">Mojobot Class</div></td>
+    <td class="todoo">20<div class="bubbleo">mBot Class</div></td>
+    <td class="todop">21<div class="bubblep">Tech Creator Class</div></td>
+    <td>22</td>
+    <td>23</td>
+    <td>24</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td class="todo">26<div class="bubble">Mojobot Class</div></td>
+    <td class="todoo">27<div class="bubbleo">mBot Class</div></td>
+    <td class="todop">28<div class="bubblep">Tech Creator Class</div></td>
+    <td>29</td>
+    <td>30</td>
+    <td>31</td>
+    <td class="muted">1</td>
+  </tr>
+</table>
+
           
 <style>{`
         html, body { 
           font-family: arial, sans-serif;
           font-size: 15px;
         }
-        
-        
-        * {
+        *{
           box-sizing: border-box;
         }
         
-        *:before {
-          box-sizing: border-box;
+        table{
+          width: 100%;
+        }
+        tr{
+        }
+        th, td{
+          text-align: center;
+          padding: 30px;
+          margin: 0;
         }
         
-        *:after {
-          box-sizing: border-box;
+        th{
+          border-bottom: 2px solid #dfdfdf;
         }
         
-        $min-width: 320px;
-        $number-of-days: 7;
-        $column-width: percentage(1/$number-of-days);
-        
-        .container {
-          max-width: 1000px;
-          margin-left: auto;
-          margin-right: auto;
-          padding-bottom: 1em;
+        th{
+          font-weight: 600;
         }
         
-        .row:before {
-          display: table;
-          content: " ";
+        .calendar{
         }
         
-        .grid-calendar {
-          min-width: $min-width;
-          .row {
-            
-            margin: 0;
-            
-          }
-          
-          .calendar-week .grid-cell {
-            background-color: #f6f6f6;
-            border: 1px solid #fff;
-          }
-        
-          .calendar-week-header .grid-cell > div > div {
-            padding-bottom: 10px;
-            height: auto;
-          }
-          
-          .grid-cell {
-            display: inline-block;
-            float: left;
-            min-height: 1px;
-            padding: 0;
-            position: relative;
-            width: $column-width;
-        
-            &.previous-month {
-              color: #a6a6a6;
-            }
-            
-            &.next-month {
-              background-color: #e1e1e1;
-            }
-            
-            > div {
-              display: flex;
-              justify-content: center;
-              width: 100%;
-        
-              > div {
-                height: 0;
-                padding: 50% 0;
-              }
-            }
-          }
+        .calendar .muted{
+          color: rgba(0,0,0,0.3);
         }
+        
+        .calendar .today{
+          color: red;
+        }
+        
+        .calendar .todo{
+          border-bottom: solid #ccce77 3px;
+          position: relative;
+        }
+        .calendar .todoo{
+          border-bottom: solid #C70039 3px;
+          position: relative;
+        }
+        .calendar .todop{
+          border-bottom: solid #3339FF 3px;
+          position: relative;
+        }
+        .calendar .todo > .bubble{
+          position: absolute;
+          padding: 25px 30px;
+          background-color: #feffd8;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          display: block;
+          opacity: 0;
+          width: 200px;
+          z-index: -1;
+          transition: all .1s ease;
+          top: 0;
+        }
+        .calendar .todo:hover > .bubble{
+          opacity: 1;
+          transition: all .2s ease;
+          top: 70px;
+          z-index: 999;
+        }
+        .calendar .todoo > .bubbleo{
+          position: absolute;
+          padding: 25px 30px;
+          background-color: #feffd8;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          display: block;
+          opacity: 0;
+          width: 200px;
+          z-index: -1;
+          transition: all .1s ease;
+          top: 0;
+        }
+        .calendar .todoo:hover > .bubbleo{
+          opacity: 1;
+          transition: all .2s ease;
+          top: 70px;
+          z-index: 999;
+        }
+        .calendar .todop > .bubblep{
+          position: absolute;
+          padding: 25px 30px;
+          background-color: #feffd8;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          display: block;
+          opacity: 0;
+          width: 200px;
+          z-index: -1;
+          transition: all .1s ease;
+          top: 0;
+        }
+        .calendar .todop:hover > .bubblep{
+          opacity: 1;
+          transition: all .2s ease;
+          top: 70px;
+          z-index: 999;
+        }
+      }
+        
         
         
         
