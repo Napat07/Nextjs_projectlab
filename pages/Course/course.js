@@ -36,7 +36,7 @@ export default function Course () {
  
           <div className="jumbotron jumbotron-img" style={{marginTop:"20px"}}>
         </div>
-        <Container>
+        <Container> 
           <Nav>
             <NavItem>
               <NavLink href="#">Our course</NavLink>
