@@ -2,6 +2,7 @@ import React,{useState}  from 'react';
 import Formm from '../../../Component/form'
 import Head from '../../../Component/head.js';
 import HeaderTitle from "../../../Component/DashBoard/HeaderTitle"
+import Router from 'next/router';
 import {  Col, 
           Button, 
           Form, 
@@ -15,9 +16,9 @@ import {  Col,
           Table  } 
           from 'reactstrap';
 
-export default function userProfile() {
+export default function orderShop() {
 
-    function HandleClike(){
+    function HandleClick() {
         Router.push({
             pathname: '/User/orderHistory/historyShop',
             
@@ -86,7 +87,7 @@ export default function userProfile() {
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row" onClick={HandleClike}>
+                                    <th scope="row" onClick={HandleClick}>
                                         <a>
                                             10/02/2019
                                         </a>
@@ -96,7 +97,7 @@ export default function userProfile() {
                                     <td style={{color:"red"}}>unpaid</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row" onClick={HandleClike}>
+                                    <th scope="row" onClick={HandleClick}>
                                         <a>
                                             11/01/2019
                                         </a>
@@ -106,7 +107,7 @@ export default function userProfile() {
                                     <td className="text-success">complete</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row" onClick={HandleClike}>
+                                    <th scope="row" onClick={HandleClick}>
                                         <a>
                                             10/01/2019
                                         </a>
